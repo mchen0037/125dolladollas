@@ -1,0 +1,30 @@
+
+
+.font1{
+    font-size:"30px";
+    color: red;
+}
+
+.menu1{
+    font-size: 40px;
+}
+
+.menu1:hover{
+    color: #25a878;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.box{
+    top: 200px;
+    position: relative;
+    height: 300px;
+}
+
+.iconColor1{
+    color: #3090d1;
+}
+
+.iconColor2{
+    color: #ce0812;
+}
