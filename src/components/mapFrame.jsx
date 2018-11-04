@@ -3,13 +3,13 @@ import {Element} from 'react-faux-dom';
 import "./TimeSeries.css";
 import * as d3 from "d3";
 
-const svg_width = 800;
-const svg_height = 500;
+const svg_width = 1000;
+const svg_height = 600;
 
 const el = new Element('body')
 var svgContainer = d3.select(el)
   .append("svg")
-  .attr("width", "100%")
+  .attr("width", svg_width)
   .attr("height", svg_height)
   .style("border", "1px solid #CCC")
   .style("background-color", '#F5F2EB')
