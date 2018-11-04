@@ -5,7 +5,9 @@ class timeLine extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <div className = "line">HELLO</div>
+                <div className = "line" onMouseDown = {this.props.circleOver}>
+                    <div id = "circle1" className = "circle"></div>
+                </div>
             </React.Fragment>
          );
     }
