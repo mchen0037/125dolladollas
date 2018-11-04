@@ -24,3 +24,15 @@
     border: #17c1a8 solid 5px;
     background-color: black;
 }
+
+#displayTime{
+    position :relative;
+    background-color: #17c1a8;
+    border: 10px yellow solid;
+    width: 400px;
+    height: 200px;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+
+}
