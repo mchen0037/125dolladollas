@@ -21,8 +21,8 @@ export function circleOut(){
 }
 
 function moveCircle(){
-    if(x > 1303){
-        x = 1303;
+    if(x > 1000){
+        x = 1000;
     }
     console.log("X: ", x);
     document.getElementById("circle1").style.left = x + "px";
