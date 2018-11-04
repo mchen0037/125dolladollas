@@ -119,5 +119,5 @@ export function indicesOfPrevious24Hrs(index) {
   console.log('chw_SAAC_total: ' + chw_SAAC_total);
 
 
-  return arr;
+  return sums;
 }
