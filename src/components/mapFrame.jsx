@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Element} from 'react-faux-dom';
 import "./TimeSeries.css";
 import * as d3 from "d3";
+import * as Helper from "../assets/js/readData.js";
 
 const svg_width = 1000;
 const svg_height = 600;
@@ -110,10 +111,16 @@ class mapFrame extends Component {
 
     return el.toReact()
   }
+
+  dataStuff() {
+    
+  }
+
   render() {
     return (
       <div>
         {this.drawMap()}
+        {this.dataStuff()}
       </div>
     )
   }
