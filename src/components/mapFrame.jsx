@@ -9,7 +9,7 @@ const svg_height = 500;
 const el = new Element('body')
 var svgContainer = d3.select(el)
   .append("svg")
-  .attr("width", svg_width)
+  .attr("width", "100%")
   .attr("height", svg_height)
   .style("border", "1px solid #CCC")
   .style("background-color", '#F5F2EB')
