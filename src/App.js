@@ -7,6 +7,8 @@ import {Container,Header, Divider, Grid} from "semantic-ui-react";
 //IMPORT JS FUNCTIONS
 import {hello} from "./assets/js/readData.js";
 import {circle} from "./assets/js/circle.js";
+import {checkCircle} from "./assets/js/circle.js";
+import {circleOut} from "./assets/js/circle.js";
 
 //IMPORT IMAGES
 import campus from "./assets/img/campus.jpg";
@@ -36,6 +38,15 @@ class App extends Component {
     circle(position);
   }
 
+  //handle circle clicked
+  handleCircleClicked =() =>{
+    checkCircle();
+  }
+
+  /*handleOnCircleOut = () =>{
+    circleOut();
+  }*/
+
   render() {
 
     return (
@@ -45,7 +56,7 @@ class App extends Component {
             <div className = "column is-7">
               <MapFrame campus = {this.state.campus}></MapFrame>
               <br/>
-              <TimeLine circleOver = {this.handleMouseMove}/>
+              <TimeLine circleOver = {this.handleMouseMove} circleOut = {this.circleOut}/>
             </div>
             <div className = "columns is-3 is-offset-1">
             <span className = "button is-primary"onClick = {this.handleData}>TEST</span>
