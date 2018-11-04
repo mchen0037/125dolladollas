@@ -35,7 +35,7 @@ class App extends Component {
       <React.Fragment>
         <br/>
         <div className = "columns">
-            <div className = "column is-6 is-offset-1">
+            <div className = "column is-7 ">
               <MapFrame campus = {this.state.campus}></MapFrame>
               <TimeLine/>
             </div>
