@@ -6,6 +6,7 @@ import {Container,Header, Divider, Grid} from "semantic-ui-react";
 
 //IMPORT JS FUNCTIONS
 import {hello} from "./assets/js/readData.js";
+import {circle} from "./assets/js/circle.js";
 
 //IMPORT IMAGES
 import campus from "./assets/img/campus.jpg";
@@ -24,9 +25,15 @@ class App extends Component {
     campus : campus
   }
 
+  //handle printing of data
   handleData(){
     console.log("hello there");
     hello();
+  }
+
+  //handle mouse move
+  handleMouseMove = (position) =>{
+    circle(position);
   }
 
   render() {
@@ -35,9 +42,10 @@ class App extends Component {
       <React.Fragment>
         <br/>
         <div className = "columns">
-            <div className = "column is-7 ">
+            <div className = "column is-7">
               <MapFrame campus = {this.state.campus}></MapFrame>
-              <TimeLine/>
+              <br/>
+              <TimeLine circleOver = {this.handleMouseMove}/>
             </div>
             <div className = "columns is-3 is-offset-1">
             <span className = "button is-primary"onClick = {this.handleData}>TEST</span>
