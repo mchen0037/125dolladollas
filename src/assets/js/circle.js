@@ -24,7 +24,9 @@ function moveCircle(){
     if(x > 1000){
         x = 1000;
     }
+    var print = x + "px";
     console.log("X: ", x);
-    document.getElementById("circle1").style.left = x + "px";
+    document.getElementById("circle1").style.left = print;
+    document.getElementById("displayTime").innerHTML = print;
 }
 

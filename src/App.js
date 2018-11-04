@@ -52,17 +52,20 @@ class App extends Component {
     return (
       <React.Fragment>
         <br/>
+        
         <div className = "columns">
             <div className = "column is-7">
+              <h1 className = "title">CHW/HW Used In The Past 24 Hours</h1>
               <MapFrame campus = {this.state.campus}></MapFrame>
               <br/>
               <TimeLine circleOver = {this.handleMouseMove} circleOut = {this.circleOut}/>
             </div>
             <div className = "columns is-3 is-offset-1">
             <span className = "button is-primary"onClick = {this.handleData}>TEST</span>
-                <MenuEnergy></MenuEnergy>
+                <MenuEnergy/>
             </div>
         </div>
+
       </React.Fragment>
     );
   }

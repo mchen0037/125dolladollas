@@ -11,7 +11,10 @@ class menuEnergy extends Component {
                     <p className = "menu1"><Icon className = "iconColor1" name = "life ring outline"/><span id = "less1">HW</span></p>
                     <br/>
                     <p className = "menu1"><Icon className = "iconColor2" name = "life ring outline"/><span id = "less1">CHW</span></p>
+                    <br/>
+                    <div id = "displayTime"></div>
                 </div>
+                
             </React.Fragment>
           );
     }
