@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import mapFrame from './components/mapFrame';
 
+//<TimeLine circleOver = {this.handleMouseMove} circleOut = {this.circleOut}/>
 //IMPORT SEMANTIC-UI
 import {Container,Header, Divider, Grid} from "semantic-ui-react";
 
@@ -9,6 +10,7 @@ import {hello} from "./assets/js/readData.js";
 import {circle} from "./assets/js/circle.js";
 import {checkCircle} from "./assets/js/circle.js";
 import {circleOut} from "./assets/js/circle.js";
+import {search} from "./assets/js/search.js";
 
 //IMPORT IMAGES
 import campus from "./assets/img/campus.jpg";
@@ -17,6 +19,7 @@ import campus from "./assets/img/campus.jpg";
 import MapFrame from "./components/mapFrame";
 import MenuEnergy from "./components/menuEnergy";
 import TimeLine from "./components/timeLine";
+import Search from "./components/search";
 
 //IMPORT CSS
 import "./assets/css/mapFrame.css";
@@ -43,6 +46,10 @@ class App extends Component {
     checkCircle();
   }
 
+  //handleProcessSearch
+  handleProcessS(date, hour){
+    search(date, hour);
+  }
   /*handleOnCircleOut = () =>{
     circleOut();
   }*/
@@ -58,7 +65,7 @@ class App extends Component {
               <h1 className = "title">CHW/HW Used In The Past 24 Hours</h1>
               <MapFrame campus = {this.state.campus}></MapFrame>
               <br/>
-              <TimeLine circleOver = {this.handleMouseMove} circleOut = {this.circleOut}/>
+              <Search/>
             </div>
             <div className = "columns is-3 is-offset-1">
             <span className = "button is-primary"onClick = {this.handleData}>TEST</span>
