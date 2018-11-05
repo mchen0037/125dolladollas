@@ -1,6 +1,7 @@
 //1483258500
 //1514557800
 //1304
+import './readData.js';
 
 var x;
 var y;
@@ -27,7 +28,7 @@ function moveCircle(){
     var print = x + "px";
     // console.log("X: ", x);
     document.getElementById("circle1").style.left = print;
-    document.getElementById("displayTime").innerHTML = print;
+
 }
 
 export function getPosition(){

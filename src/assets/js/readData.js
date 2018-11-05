@@ -87,6 +87,7 @@ export function indicesOfPrevious24Hrs(index) {
   });
 
   var sums = [];
+  sums.push(chw_total_total)
   sums.push(hw_total_total)
   sums.push(hw_kl_total)
   sums.push(chw_kl_total)
@@ -102,22 +103,29 @@ export function indicesOfPrevious24Hrs(index) {
   sums.push(hw_SAAC_total)
   sums.push(chw_SAAC_total)
 
-  // console.log('chw_total_total: ' + chw_total_total);
-  // console.log('hw_total_total: ' + hw_total_total);
-  // console.log('hw_kl_total: ' + hw_kl_total);
-  // console.log('chw_kl_total: ' + chw_kl_total);
-  // console.log('hw_cob_total: ' + hw_cob_total);
-  // console.log('chw_cob_total: ' + chw_cob_total);
-  // console.log('hw_SE1_total: ' + hw_SE1_total);
-  // console.log('chw_SE1_total: ' + chw_SE1_total);
-  // console.log('hw_SE2_total: ' + hw_SE2_total);
-  // console.log('chw_SE2_total: ' + chw_SE2_total);
-  // console.log('hw_SSB_total: ' + hw_SSB_total);
-  // console.log('hw_SSM_total: ' + hw_SSM_total);
-  // console.log('chw_SSM_total: ' + chw_SSM_total);
-  // console.log('hw_SAAC_total: ' + hw_SAAC_total);
-  // console.log('chw_SAAC_total: ' + chw_SAAC_total);
+  console.log('chw_total_total: ' + chw_total_total);
+  console.log('hw_total_total: ' + hw_total_total);
+  console.log('hw_kl_total: ' + hw_kl_total);
+  console.log('chw_kl_total: ' + chw_kl_total);
+  console.log('hw_cob_total: ' + hw_cob_total);
+  console.log('chw_cob_total: ' + chw_cob_total);
+  console.log('hw_SE1_total: ' + hw_SE1_total);
+  console.log('chw_SE1_total: ' + chw_SE1_total);
+  console.log('hw_SE2_total: ' + hw_SE2_total);
+  console.log('chw_SE2_total: ' + chw_SE2_total);
+  console.log('hw_SSB_total: ' + hw_SSB_total);
+  console.log('hw_SSM_total: ' + hw_SSM_total);
+  console.log('chw_SSM_total: ' + chw_SSM_total);
+  console.log('hw_SAAC_total: ' + hw_SAAC_total);
+  console.log('chw_SAAC_total: ' + chw_SAAC_total);
 
   console.log(sums)
   return sums;
 }
+
+// export function getTimes(inputTime) {
+//   var output = [];
+//   data.map( function(d) {
+//     time =
+//   })
+// }

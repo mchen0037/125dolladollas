@@ -48,7 +48,7 @@ class App extends Component {
     checkCircle();
   }
 
-  
+
   //handleProcessSearch
   handleProcessS(date, hour){
     search(date, hour);
@@ -57,34 +57,46 @@ class App extends Component {
     circleOut();
   }*/
 
+  changeSlider(number) {
+    this.setState({positionOfSlider: number});
+
+  }
+
   getTimeFromSlider = () => {
-    console.log("HELLO WORLD!!");
-    console.log(getPosition());
     var scaleLine = d3.scaleLinear()
       .domain([0,1000])
       .range([1483258500, 1514557800]);
 
-    // console.log(scaleLine(circlePose));
-
-    return 1514557800;
+    this.changeSlider(scaleLine(getPosition()));
+    console.log(this.state.positionOfSlider);
+    // this.state = {
+    //   positionOfSlider: scaleLine(getPosition())
+    // };
   }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      positionOfSlider: 37.0
+    };
+  }
+
 
   render() {
 
     return (
       <React.Fragment>
         <br/>
-        
+
         <div className = "columns">
             <div className = "column is-7">
-              <h1 className = "title">CHW/HW Used In The Past 24 Hours</h1>
-              <MapFrame campus = {this.state.campus}></MapFrame>
+              <h1 className = "title">CHW/HW Used In The Past 24 Hours (but just HW for now)</h1>
+              <MapFrame campus={this.state.campus} time={this.state.positionOfSlider}></MapFrame>
               <br/>
               <TimeLine getTimeFromSlider = {this.getTimeFromSlider} circleOver = {this.handleMouseMove}/>
               <Search/>
             </div>
             <div className = "columns is-3 is-offset-1">
-            <span className = "button is-primary"onClick = {this.handleData}>TEST</span>
                 <MenuEnergy/>
             </div>
         </div>

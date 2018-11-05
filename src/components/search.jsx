@@ -10,11 +10,11 @@ class searchDay extends Component {
           this.handleInputChange = this.handleInputChange.bind(this);
           this.handleSubmit = this.handleSubmit.bind(this);
         }
-      
+
         handleInputChange(EventTarget) {
           this.setState({ [EventTarget.target.name] : EventTarget.target.value });
         }
-      
+
         handleSubmit(EventTarget) {
           EventTarget.preventDefault();
           const data = {
@@ -25,16 +25,16 @@ class searchDay extends Component {
           console.log("HOUR " ,data.hour);
 
         }
-    render() { 
+    render() {
         return (
             <React.Fragment>
                 <form onSubmit={this.handleSubmit} >
                 <div className = "columns">
                     <div className = "column is-5">
-                        SEARCH DATE: <input name = "date" className = "input" type = "text" onChange={this.handleInputChange} placeholder = "hello"/>
+                        SEARCH DATE: <input name = "date" className = "input" type = "text" onChange={this.handleInputChange} placeholder = "DD-MM-YYY"/>
                     </div>
                     <div className = "column is-5">
-                        SEARCH HOUR: <input name = "hour" className = "input" type = "text"  onChange={this.handleInputChange} placeholder = "hello"/>
+                        SEARCH HOUR: <input name = "hour" className = "input" type = "text"  onChange={this.handleInputChange} placeholder = "HH:MM:SS"/>
                     </div>
                     <div className = "column is-5">
                         <br/>

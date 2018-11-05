@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Icon} from "semantic-ui-react";
 
 class menuEnergy extends Component {
-    render() { 
+    render() {
         return (
             <React.Fragment>
                 <div className = "box">
@@ -12,12 +12,12 @@ class menuEnergy extends Component {
                     <br/>
                     <p className = "menu1"><Icon className = "iconColor2" name = "life ring outline"/><span id = "less1">CHW</span></p>
                     <br/>
-                    <div id = "displayTime"></div>
+                    
                 </div>
-                
+
             </React.Fragment>
           );
     }
 }
- 
+
 export default menuEnergy;

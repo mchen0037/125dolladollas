@@ -4,6 +4,7 @@ import "./TimeSeries.css";
 import * as d3 from "d3";
 import * as Helper from "../assets/js/readData.js";
 import * as Circle from "../assets/js/circle.js";
+import * as TimeStamp from "../assets/js/convertTimestamp.js";
 
 const svg_width = 1000;
 const svg_height = 600;
@@ -42,14 +43,14 @@ class mapFrame extends Component {
     var ssm = svgContainer.append("g");
     var saac = svgContainer.append("g");
 
-    var tooltip = svgContainer.append("g");
-    tooltip.append("div")
-      .style('position', 'absolute')
-      .style('background', '#f4f4f4')
-      .style('padding', '5 15px')
-      .style('border', '1px #333 solid')
-      .style('border-radius', '5px')
-      .style('opacity', '0')
+    // var tooltip = svgContainer.append("g");
+    // tooltip.append("div")
+    //   .style('position', 'absolute')
+    //   .style('background', '#f4f4f4')
+    //   .style('padding', '5 15px')
+    //   .style('border', '1px #333 solid')
+    //   .style('border-radius', '5px')
+    //   .style('opacity', '0')
 
     function handleMouseOver() {
       var building = d3.select(this);
@@ -125,12 +126,11 @@ class mapFrame extends Component {
       .attr('height', 75)
       .on("mouseover", handleMouseOver)
       .on('mouseout', handleMouseOut);
-
-    return el.toReact()
   }
 
   plotCircles(index) {
     var data = Helper.indicesOfPrevious24Hrs(index);
+    // console.log(index)
 
     var buildings = [data[2], data[3], data[4], data[5], data[6], data[7],
       data[8], data[9], data[10], data[11], data[12], data[13], data[14]];
@@ -154,57 +154,83 @@ class mapFrame extends Component {
       .style('fill', 'red')
       .attr('cx', KLmidX)
       .attr('cy', KLmidY)
-      .attr('r', scaleR(data[2]));
+      .attr('r', scaleR(data[3]));
 
     cobCircle.append('circle')
       .style('fill', 'red')
       .attr('cx', COBmidX)
       .attr('cy', COBmidY)
-      .attr('r', scaleR(data[4]));
+      .attr('r', scaleR(data[5]));
 
     se1Circle.append('circle')
       .style('fill', 'red')
       .attr('cx', SE1midX)
       .attr('cy', SE1midY)
-      .attr('r', scaleR(data[6]));
+      .attr('r', scaleR(data[7]));
 
     se2Circle.append('circle')
       .style('fill', 'red')
       .attr('cx', SE2midX)
       .attr('cy', SE2midY)
-      .attr('r', scaleR(data[8]));
+      .attr('r', scaleR(data[9]));
 
     ssbCircle.append('circle')
       .style('fill', 'red')
       .attr('cx', SSBmidX)
       .attr('cy', SSBmidY)
-      .attr('r', scaleR(data[10]));
+      .attr('r', scaleR(data[11]));
 
     ssmCircle.append('circle')
       .style('fill', 'red')
       .attr('cx', SSMmidX)
       .attr('cy', SSMmidY)
-      .attr('r', scaleR(data[11]));
+      .attr('r', scaleR(data[13]));
 
     saacCircle.append('circle')
       .style('fill', 'red')
       .attr('cx', SAACmidX)
       .attr('cy', SAACmidY)
-      .attr('r', scaleR(data[13]));
+      .attr('r', scaleR(data[15]));
 
     return el.toReact();
   }
 
-  getTimeFromSlider() {
-    console.log("HELLO WORLD!!");
-    console.log(Circle.getPosition());
-    var scaleLine = d3.scaleLinear()
-      .domain([0,1000])
-      .range([1483258500, 1514557800]);
+  displayDay(timestamp) {
+    var date = TimeStamp.convertTimestamp(timestamp);
+    var day = date.getDate();
+    var month = date.getMonth();
+    var year = date.getFullYear();
+    var hrs = date.getHours();
+    var min = date.getMinutes();
+    var sec = date.getSeconds();
 
-    // console.log(scaleLine(circlePose));
+    return month + '-' + day + '-' + year + " " + hrs + ':' + min + ':' + sec;
 
-    return 1514557800;
+  }
+
+  printData(timestamp) {
+    var data = Helper.indicesOfPrevious24Hrs(timestamp);
+
+
+    return (
+      <div>
+        <li><b>chw_total:</b> {data[0]} </li>
+        <li><b>hw_total:</b> {data[1]} </li>
+        <li><b>hw_kl:</b> {data[2]} </li>
+        <li><b>chw_kl:</b> {data[3]} </li>
+        <li><b>hw_cob:</b> {data[4]} </li>
+        <li><b>chw_cob:</b> {data[5]} </li>
+        <li><b>hw_SE1:</b> {data[6]} </li>
+        <li><b>chw_SE1:</b> {data[7]} </li>
+        <li><b>hw_SE2:</b> {data[8]} </li>
+        <li><b>chw_SE2:</b> {data[9]} </li>
+        <li><b>hw_SSB:</b> {data[10]} </li>
+        <li><b>hw_SSM:</b> {data[11]} </li>
+        <li><b>chw_SSM:</b> {data[12]} </li>
+        <li><b>hw_SAAC:</b> {data[13]} </li>
+        <li><b>chw_SAAC:</b> {data[14]} </li>
+      </div>
+    )
   }
 
   render() {
@@ -212,7 +238,9 @@ class mapFrame extends Component {
       <div>
         {this.drawMap()}
         {/* {this.plotCircles(1514557800)} */}
-        {this.plotCircles(this.getTimeFromSlider())}
+        <b className = "title">{this.displayDay(this.props.time)}</b>
+        {this.plotCircles(this.props.time)}
+        {this.printData(this.props.time)}
       </div>
     )
   }
