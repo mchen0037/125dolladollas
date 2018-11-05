@@ -2,22 +2,22 @@ var data = require('./data.json');
 
 //example of data:
 // {
-//   "time": 1514557800,
-//   "chw_total": 171.3230091631,
-//   "hw_total": 201.419626236,
-//   "hw_kl": 21.8,
-//   "chw_kl": 42.4,
-//   "hw_cob": 9.3,
-//   "chw_cob": 14.7,
-//   "hw_SE1": 147.5,
-//   "chw_SE1": 82.4,
-//   "hw_SE2": 0,
-//   "chw_SE2": 9.00225,
-//   "hw_SSB": 13.76,
-//   "hw_SSM": "NULL",
-//   "chw_SSM": "NULL",
-//   "hw_SAAC": "NULL",
-//   "chw_SAAC": "NULL",
+//0   "time": 1514557800,
+//1   "chw_total": 171.3230091631,
+//2   "hw_total": 201.419626236,
+//3   "hw_kl": 21.8,
+//4   "chw_kl": 42.4,
+//5   "hw_cob": 9.3,
+//6   "chw_cob": 14.7,
+//7   "hw_SE1": 147.5,
+//8   "chw_SE1": 82.4,
+//9   "hw_SE2": 0,
+//10  "chw_SE2": 9.00225,
+//11  "hw_SSB": 13.76,
+//12  "hw_SSM": "NULL",
+//13  "chw_SSM": "NULL",
+//14  "hw_SAAC": "NULL",
+//15  "chw_SAAC": "NULL",
 //   "": ""
 // },
 // {
@@ -102,22 +102,22 @@ export function indicesOfPrevious24Hrs(index) {
   sums.push(hw_SAAC_total)
   sums.push(chw_SAAC_total)
 
-  console.log('chw_total_total: ' + chw_total_total);
-  console.log('hw_total_total: ' + hw_total_total);
-  console.log('hw_kl_total: ' + hw_kl_total);
-  console.log('chw_kl_total: ' + chw_kl_total);
-  console.log('hw_cob_total: ' + hw_cob_total);
-  console.log('chw_cob_total: ' + chw_cob_total);
-  console.log('hw_SE1_total: ' + hw_SE1_total);
-  console.log('chw_SE1_total: ' + chw_SE1_total);
-  console.log('hw_SE2_total: ' + hw_SE2_total);
-  console.log('chw_SE2_total: ' + chw_SE2_total);
-  console.log('hw_SSB_total: ' + hw_SSB_total);
-  console.log('hw_SSM_total: ' + hw_SSM_total);
-  console.log('chw_SSM_total: ' + chw_SSM_total);
-  console.log('hw_SAAC_total: ' + hw_SAAC_total);
-  console.log('chw_SAAC_total: ' + chw_SAAC_total);
+  // console.log('chw_total_total: ' + chw_total_total);
+  // console.log('hw_total_total: ' + hw_total_total);
+  // console.log('hw_kl_total: ' + hw_kl_total);
+  // console.log('chw_kl_total: ' + chw_kl_total);
+  // console.log('hw_cob_total: ' + hw_cob_total);
+  // console.log('chw_cob_total: ' + chw_cob_total);
+  // console.log('hw_SE1_total: ' + hw_SE1_total);
+  // console.log('chw_SE1_total: ' + chw_SE1_total);
+  // console.log('hw_SE2_total: ' + hw_SE2_total);
+  // console.log('chw_SE2_total: ' + chw_SE2_total);
+  // console.log('hw_SSB_total: ' + hw_SSB_total);
+  // console.log('hw_SSM_total: ' + hw_SSM_total);
+  // console.log('chw_SSM_total: ' + chw_SSM_total);
+  // console.log('hw_SAAC_total: ' + hw_SAAC_total);
+  // console.log('chw_SAAC_total: ' + chw_SAAC_total);
 
-
+  console.log(sums)
   return sums;
 }

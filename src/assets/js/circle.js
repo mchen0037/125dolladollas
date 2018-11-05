@@ -25,8 +25,11 @@ function moveCircle(){
         x = 1000;
     }
     var print = x + "px";
-    console.log("X: ", x);
+    // console.log("X: ", x);
     document.getElementById("circle1").style.left = print;
     document.getElementById("displayTime").innerHTML = print;
 }
 
+export function getPosition(){
+  return x;
+}
