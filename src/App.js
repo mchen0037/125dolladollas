@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import mapFrame from './components/mapFrame';
+import * as d3 from "d3";
 
 //<TimeLine circleOver = {this.handleMouseMove} circleOut = {this.circleOut}/>
 //IMPORT SEMANTIC-UI
@@ -11,6 +12,7 @@ import {circle} from "./assets/js/circle.js";
 import {checkCircle} from "./assets/js/circle.js";
 import {circleOut} from "./assets/js/circle.js";
 import {search} from "./assets/js/search.js";
+import {getPosition} from "./assets/js/circle.js";
 
 //IMPORT IMAGES
 import campus from "./assets/img/campus.jpg";
@@ -46,6 +48,7 @@ class App extends Component {
     checkCircle();
   }
 
+  
   //handleProcessSearch
   handleProcessS(date, hour){
     search(date, hour);
@@ -53,6 +56,18 @@ class App extends Component {
   /*handleOnCircleOut = () =>{
     circleOut();
   }*/
+
+  getTimeFromSlider = () => {
+    console.log("HELLO WORLD!!");
+    console.log(getPosition());
+    var scaleLine = d3.scaleLinear()
+      .domain([0,1000])
+      .range([1483258500, 1514557800]);
+
+    // console.log(scaleLine(circlePose));
+
+    return 1514557800;
+  }
 
   render() {
 
@@ -65,6 +80,7 @@ class App extends Component {
               <h1 className = "title">CHW/HW Used In The Past 24 Hours</h1>
               <MapFrame campus = {this.state.campus}></MapFrame>
               <br/>
+              <TimeLine getTimeFromSlider = {this.getTimeFromSlider} circleOver = {this.handleMouseMove}/>
               <Search/>
             </div>
             <div className = "columns is-3 is-offset-1">

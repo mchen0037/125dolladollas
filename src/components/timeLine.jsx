@@ -5,7 +5,7 @@ class timeLine extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <div onMouseDown = {this.props.circleOver}  className = "line">
+                <div onMouseDown = {this.props.circleOver} onClick = {this.props.getTimeFromSlider} className = "line">
                     <div id = "circle1" className = "circle"></div>
                 </div>
             </React.Fragment>
